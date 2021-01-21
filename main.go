@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
+	"path/filepath"
 
 	"github.com/fatih/color"
 	"github.com/urfave/cli/v2"
@@ -11,7 +13,11 @@ import (
 const (
 	appName = "license"
 
-	nameFlag = "name"
+	nameFlag   = "name"
+	outputFlag = "output"
+
+	currentDir      = "."
+	licenseFilename = "LICENSE"
 )
 
 var fmtErr = color.New(color.FgRed)
@@ -28,6 +34,12 @@ func main() {
 				Aliases: []string{"n"},
 				Usage:   "which `LICENSE`",
 			},
+			&cli.StringFlag{
+				Name:        outputFlag,
+				Aliases:     []string{"o"},
+				Usage:       "output directory",
+				DefaultText: currentDir,
+			},
 		},
 		Action: a.Run,
 	}
@@ -41,7 +53,8 @@ func main() {
 
 type action struct {
 	flags struct {
-		name string
+		name   string
+		output string
 	}
 }
 
@@ -53,9 +66,20 @@ func (a *action) Run(c *cli.Context) error {
 
 	a.getFlags(c)
 
+	license, err := generateLicense(a.flags.name)
+	if err != nil {
+		return fmt.Errorf("failed to generate license %s: %w", a.flags.name, err)
+	}
+
+	outputFile := filepath.Join(a.flags.output, licenseFilename)
+	if err := ioutil.WriteFile(outputFile, []byte(license), os.ModePerm); err != nil {
+		return fmt.Errorf("failed to write file %s: %w", outputFile, err)
+	}
+
 	return nil
 }
 
 func (a *action) getFlags(c *cli.Context) {
 	a.flags.name = c.String(nameFlag)
+	a.flags.output = c.String(outputFlag)
 }

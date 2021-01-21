@@ -14,7 +14,7 @@ const (
 // map template name with filename
 var templates = map[string]templateInfo{
 	"MIT": {
-		filename: "mit",
+		filename: "mit.txt",
 		args: []string{
 			"[year]",
 			"[fullname]",
@@ -27,7 +27,7 @@ type templateInfo struct {
 	args     []string
 }
 
-func generateLicense(name string, values map[string]string) (string, error) {
+func generateLicense(name string) (string, error) {
 	if name == "" {
 		return "", fmt.Errorf("empty license name")
 	}
@@ -47,10 +47,8 @@ func generateLicense(name string, values map[string]string) (string, error) {
 	// Replace template
 	template := string(templateRaw)
 	for _, arg := range templateInfo.args {
-		value, ok := values[arg]
-		if !ok {
-			return "", fmt.Errorf("missing arg %s", arg)
-		}
+		fmt.Printf("What is your %s: ", arg)
+		value := readStdin()
 
 		template = strings.ReplaceAll(template, arg, value)
 	}
