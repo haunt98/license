@@ -13,7 +13,6 @@ import (
 const (
 	appName = "license"
 
-	nameFlag   = "name"
 	outputFlag = "output"
 
 	currentDir      = "."
@@ -29,11 +28,6 @@ func main() {
 		Name:  appName,
 		Usage: "generate LICENSE",
 		Flags: []cli.Flag{
-			&cli.StringFlag{
-				Name:    nameFlag,
-				Aliases: []string{"n"},
-				Usage:   "which `LICENSE`",
-			},
 			&cli.StringFlag{
 				Name:        outputFlag,
 				Aliases:     []string{"o"},
@@ -53,7 +47,6 @@ func main() {
 
 type action struct {
 	flags struct {
-		name   string
 		output string
 	}
 }
@@ -66,9 +59,12 @@ func (a *action) Run(c *cli.Context) error {
 
 	a.getFlags(c)
 
-	license, err := generateLicense(a.flags.name)
+	fmt.Printf("What LICENSE do you chose: ")
+	licenseName := readStdin()
+
+	license, err := generateLicense(licenseName)
 	if err != nil {
-		return fmt.Errorf("failed to generate license %s: %w", a.flags.name, err)
+		return fmt.Errorf("failed to generate license %s: %w", licenseName, err)
 	}
 
 	outputFile := filepath.Join(a.flags.output, licenseFilename)
@@ -80,6 +76,5 @@ func (a *action) Run(c *cli.Context) error {
 }
 
 func (a *action) getFlags(c *cli.Context) {
-	a.flags.name = c.String(nameFlag)
 	a.flags.output = c.String(outputFlag)
 }
