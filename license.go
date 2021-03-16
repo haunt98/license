@@ -1,8 +1,8 @@
 package main
 
 import (
+	"embed"
 	"fmt"
-	"io/ioutil"
 	"path/filepath"
 	"strings"
 )
@@ -10,6 +10,9 @@ import (
 const (
 	templatesPath = "templates"
 )
+
+//go:embed templates/*
+var embedFS embed.FS
 
 // map template name with filename
 var templates = map[string]templateInfo{
@@ -37,9 +40,11 @@ func generateLicense(name string) (string, error) {
 		return "", fmt.Errorf("not support license %s", name)
 	}
 
-	// Read template
+	// Get correct path of license
 	path := filepath.Join(templatesPath, templateInfo.filename)
-	templateRaw, err := ioutil.ReadFile(path)
+
+	// Read template
+	templateRaw, err := embedFS.ReadFile(path)
 	if err != nil {
 		return "", fmt.Errorf("failed to read file %s: %w", path, err)
 	}
