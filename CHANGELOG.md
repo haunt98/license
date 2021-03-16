@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## v0.2.0 (2021-3-16)
+
+### Added
+
+- feat: always use upper string for license name
+
+- feat: use go:embed to include mit template
+
+### Others
+
+- refactor: read license from input
+
+- chore: add comment for stdin
+
+- build: bump go 1.16 in go.mod
+
+- chore(changelog): generate changelog with v0.1.0
+
 ## v0.1.0 (2021-3-16)
 
 ### Added
