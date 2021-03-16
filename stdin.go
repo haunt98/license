@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+// Read input until newline,
+// ignore empty line
 func readStdin() string {
 	bs := bufio.NewScanner(os.Stdin)
 	for bs.Scan() {
