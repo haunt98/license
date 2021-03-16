@@ -15,6 +15,7 @@ const (
 var embedFS embed.FS
 
 // map template name with filename
+// always use upercase for license name
 var templates = map[string]templateInfo{
 	"MIT": {
 		filename: "mit.txt",
@@ -34,6 +35,7 @@ func generateLicense(name string) (string, error) {
 	if name == "" {
 		return "", fmt.Errorf("empty license name")
 	}
+	name = strings.ToUpper(name)
 
 	templateInfo, ok := templates[name]
 	if !ok {
