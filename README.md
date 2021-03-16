@@ -8,8 +8,22 @@ Support:
 
 - [MIT](https://choosealicense.com/licenses/mit/)
 
-Use:
+## Install
+
+With Go version `>= 1.16`:
 
 ```sh
-go run *.go --name MIT --output .
+go install github.com/haunt98/license@latest
+```
+
+With Go version `< 1.16`:
+
+```sh
+GO111module=on go get github.com/license/changeloguru
+```
+
+## Usage
+
+```sh
+license --name MIT --output .
 ```
