@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -68,7 +67,7 @@ func (a *action) Run(c *cli.Context) error {
 	}
 
 	outputFile := filepath.Join(a.flags.output, licenseFilename)
-	if err := ioutil.WriteFile(outputFile, []byte(license), os.ModePerm); err != nil {
+	if err := os.WriteFile(outputFile, []byte(license), os.ModePerm); err != nil {
 		return fmt.Errorf("failed to write file %s: %w", outputFile, err)
 	}
 
