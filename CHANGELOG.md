@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.3.0 (2021-3-17)
+
+### Added
+
+- feat: use os.WriteFile instead of ioutil.WriteFile
+
+### Others
+
+- chore(changelog): generate v0.2.0
+
 ## v0.2.0 (2021-3-16)
 
 ### Added
