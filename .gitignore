@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Window
+*.exe
+
 # IntelliJ
 .idea/
 
@@ -9,4 +12,5 @@
 
 # Node
 node_modules/
+package.json
 package-lock.json
