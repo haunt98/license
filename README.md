@@ -26,5 +26,5 @@ GO111module=on go get github.com/license/changeloguru
 ## Usage
 
 ```sh
-license --name MIT --output .
+license generate
 ```
