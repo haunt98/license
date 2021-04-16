@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/fatih/color"
+	"github.com/haunt98/ioe-go"
 	"github.com/urfave/cli/v2"
 )
 
@@ -59,7 +60,7 @@ func (a *action) Run(c *cli.Context) error {
 	a.getFlags(c)
 
 	fmt.Printf("What LICENSE do you chose: ")
-	licenseName := readStdin()
+	licenseName := ioe.ReadInput()
 
 	license, err := generateLicense(licenseName)
 	if err != nil {

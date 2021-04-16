@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"path/filepath"
 	"strings"
+
+	"github.com/haunt98/ioe-go"
 )
 
 const (
@@ -55,7 +57,7 @@ func generateLicense(name string) (string, error) {
 	template := string(templateRaw)
 	for _, arg := range templateInfo.args {
 		fmt.Printf("What is your %s: ", arg)
-		value := readStdin()
+		value := ioe.ReadInput()
 
 		template = strings.ReplaceAll(template, arg, value)
 	}
