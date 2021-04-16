@@ -11,12 +11,22 @@ import (
 )
 
 const (
-	appName = "license"
+	appName  = "license"
+	appUsage = "generate LICENSE"
 
+	// flags
 	outputFlag = "output"
+
+	// flag usages
+	outputUsage = "output directory"
 
 	currentDir      = "."
 	licenseFilename = "LICENSE"
+)
+
+var (
+	// flag aliases
+	outputAliases = []string{"o"}
 )
 
 var fmtErr = color.New(color.FgRed)
@@ -26,12 +36,12 @@ func main() {
 
 	app := &cli.App{
 		Name:  appName,
-		Usage: "generate LICENSE",
+		Usage: appUsage,
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:        outputFlag,
-				Aliases:     []string{"o"},
-				Usage:       "output directory",
+				Aliases:     outputAliases,
+				Usage:       outputUsage,
 				DefaultText: currentDir,
 			},
 		},
