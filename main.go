@@ -12,19 +12,28 @@ import (
 
 const (
 	appName  = "license"
-	appUsage = "generate LICENSE"
+	appUsage = "generate LICENSE quickly"
 
 	// flags
 	outputFlag = "output"
 
+	// commands
+	generateCommand = "generate"
+
 	// flag usages
 	outputUsage = "output directory"
+
+	// command usages
+	generateUsage = "generate LICENSE"
 
 	currentDir      = "."
 	licenseFilename = "LICENSE"
 )
 
 var (
+	// command aliases
+	generateAliases = []string{"gen"}
+
 	// flag aliases
 	outputAliases = []string{"o"}
 )
@@ -35,15 +44,23 @@ func main() {
 	app := &cli.App{
 		Name:  appName,
 		Usage: appUsage,
-		Flags: []cli.Flag{
-			&cli.StringFlag{
-				Name:        outputFlag,
-				Aliases:     outputAliases,
-				Usage:       outputUsage,
-				DefaultText: currentDir,
+		Commands: []*cli.Command{
+			{
+				Name:    generateCommand,
+				Aliases: generateAliases,
+				Usage:   generateUsage,
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:        outputFlag,
+						Aliases:     outputAliases,
+						Usage:       outputUsage,
+						DefaultText: currentDir,
+					},
+				},
+				Action: a.RunGenerate,
 			},
 		},
-		Action: a.Run,
+		Action: a.RunHelp,
 	}
 
 	if err := app.Run(os.Args); err != nil {
@@ -57,12 +74,11 @@ type action struct {
 	}
 }
 
-func (a *action) Run(c *cli.Context) error {
-	// Show help if there is nothing
-	if c.NArg() == 0 && c.NumFlags() == 0 {
-		return cli.ShowAppHelp(c)
-	}
+func (a *action) RunHelp(c *cli.Context) error {
+	return cli.ShowAppHelp(c)
+}
 
+func (a *action) RunGenerate(c *cli.Context) error {
 	a.getFlags(c)
 
 	fmt.Printf("What LICENSE do you chose: ")
