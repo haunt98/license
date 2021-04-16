@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## v0.4.0 (2021-04-17)
+
+### Added
+
+- feat: using my own color pkg (2021-04-17)
+
+- feat: using ioe.ReadInput to replace readStdin (2021-04-17)
+
+### Others
+
+- chore(readme): update usage (2021-04-17)
+
+- refactor: split generate command and help default (2021-04-17)
+
+- refactor: move usage, aliases to outside var (2021-04-17)
+
+- chore: update gitignore (2021-04-17)
+
+- chore: update go on github action (2021-04-17)
+
+- chore(changelog): generate v0.3.0 (2021-03-17)
+
 ## v0.3.0 (2021-3-17)
 
 ### Added
