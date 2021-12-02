@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.5.0 (2021-12-02)
+
+### Others
+
+- chore: add goreleaser (2021-12-02)
+
+- chore: bump github action (2021-12-02)
+
+- chore: update go.mod with go 1.17 (2021-12-02)
+
+- build: update go.mod (2021-05-06)
+
+- chore(changelog): generate v0.4.0 (2021-04-17)
+
 ## v0.4.0 (2021-04-17)
 
 ### Added
