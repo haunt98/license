@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/haunt98/ioe-go"
+	"github.com/make-go-great/ioe-go"
 )
 
 const (

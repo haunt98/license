@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/haunt98/color"
-	"github.com/haunt98/ioe-go"
+	"github.com/make-go-great/color-go"
+	"github.com/make-go-great/ioe-go"
 	"github.com/urfave/cli/v2"
 )
 
