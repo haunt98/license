@@ -4,8 +4,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0 h1:EoUDS0afbrsXAZ9YQ9jdu/mZ2sXgT1/2yyNng
 github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/fatih/color v1.13.0 h1:8LOYc1KYPPmyKMuN8QV2DNRWNbLo6LZ0iLs8+mlH53w=
 github.com/fatih/color v1.13.0/go.mod h1:kLAiJbzzSOZDVNGyDpeOxJ47H46qBXwg5ILebYFFOfk=
-github.com/make-go-great/color-go v0.3.0 h1:ZVtVk/wVVsZZwSJG7PZpsY5zwIyGao5VoN48yKfSzYA=
-github.com/make-go-great/color-go v0.3.0/go.mod h1:G5G8IJ3PUo+vSQ+UvnfaswF8O/piVIhFJKv1mQjBGpI=
+github.com/make-go-great/color-go v0.4.1 h1:4HIat5r1oQneu5BSDUjHKN/9x4Ay2qEEkswdOgk/VRY=
+github.com/make-go-great/color-go v0.4.1/go.mod h1:G5G8IJ3PUo+vSQ+UvnfaswF8O/piVIhFJKv1mQjBGpI=
 github.com/make-go-great/ioe-go v0.3.0 h1:Z7sJ3hsSLsy22OdGIWF4JFP/ElWhsByvcRMsA/hLZsQ=
 github.com/make-go-great/ioe-go v0.3.0/go.mod h1:RMXnZIKVXk52+H7EJZoBpZ3SSuxUPk9UFqpHFZ9uOUk=
 github.com/mattn/go-colorable v0.1.9 h1:sqDoxXbdeALODt0DAeJCVp38ps9ZogZEAXjus69YV3U=
