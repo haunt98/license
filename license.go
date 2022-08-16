@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"errors"
 	"fmt"
 	"path/filepath"
 	"strings"
@@ -12,6 +13,8 @@ import (
 const (
 	templatesPath = "templates"
 )
+
+var ErrInvalidLicense = errors.New("invalid license")
 
 //go:embed templates/*
 var embedFS embed.FS
@@ -35,13 +38,13 @@ type templateInfo struct {
 
 func generateLicense(name string) (string, error) {
 	if name == "" {
-		return "", fmt.Errorf("empty license name")
+		return "", fmt.Errorf("empty license name: %w", ErrInvalidLicense)
 	}
 	name = strings.ToUpper(name)
 
 	templateInfo, ok := templates[name]
 	if !ok {
-		return "", fmt.Errorf("not support license %s", name)
+		return "", fmt.Errorf("not support license %s: %w", name, ErrInvalidLicense)
 	}
 
 	// Get correct path of license
