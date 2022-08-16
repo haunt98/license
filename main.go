@@ -11,20 +11,14 @@ import (
 )
 
 const (
-	appName  = "license"
-	appUsage = "generate LICENSE quickly"
+	name  = "license"
+	usage = "generate LICENSE quickly"
 
-	// flags
-	outputFlag = "output"
+	commandGenerateName  = "generate"
+	commandGenerateUsage = "generate LICENSE"
 
-	// commands
-	generateCommand = "generate"
-
-	// flag usages
-	outputUsage = "output directory"
-
-	// command usages
-	generateUsage = "generate LICENSE"
+	flagOutputName  = "output"
+	flagOutputUsage = "output directory"
 
 	currentDir      = "."
 	licenseFilename = "LICENSE"
@@ -42,18 +36,18 @@ func main() {
 	a := action{}
 
 	app := &cli.App{
-		Name:  appName,
-		Usage: appUsage,
+		Name:  name,
+		Usage: usage,
 		Commands: []*cli.Command{
 			{
-				Name:    generateCommand,
+				Name:    commandGenerateName,
 				Aliases: generateAliases,
-				Usage:   generateUsage,
+				Usage:   commandGenerateUsage,
 				Flags: []cli.Flag{
 					&cli.StringFlag{
-						Name:        outputFlag,
+						Name:        flagOutputName,
 						Aliases:     outputAliases,
-						Usage:       outputUsage,
+						Usage:       flagOutputUsage,
 						DefaultText: currentDir,
 					},
 				},
@@ -64,7 +58,7 @@ func main() {
 	}
 
 	if err := app.Run(os.Args); err != nil {
-		color.PrintAppError(appName, err.Error())
+		color.PrintAppError(name, err.Error())
 	}
 }
 
@@ -98,5 +92,5 @@ func (a *action) RunGenerate(c *cli.Context) error {
 }
 
 func (a *action) getFlags(c *cli.Context) {
-	a.flags.output = c.String(outputFlag)
+	a.flags.output = c.String(flagOutputName)
 }
