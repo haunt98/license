@@ -29,6 +29,9 @@ var templates = map[string]templateInfo{
 			"[fullname]",
 		},
 	},
+	"GNU GPLv3": {
+		filename: "gnu_gplv3.txt",
+	},
 }
 
 type templateInfo struct {
@@ -42,8 +45,16 @@ func generateLicense(name string) (string, error) {
 	}
 	name = strings.ToUpper(name)
 
-	templateInfo, ok := templates[name]
-	if !ok {
+	isSupportTemplate := false
+	var templateInfo templateInfo
+	for templateName := range templates {
+		if strings.EqualFold(templateName, name) {
+			isSupportTemplate = true
+			templateInfo = templates[templateName]
+		}
+	}
+
+	if !isSupportTemplate {
 		return "", fmt.Errorf("not support license %s: %w", name, ErrInvalidLicense)
 	}
 
