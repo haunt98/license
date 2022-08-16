@@ -24,7 +24,7 @@ var embedFS embed.FS
 var templates = map[string]templateInfo{
 	"MIT": {
 		templateFilename: "mit.txt",
-		outputFilename:   "LICENSE",
+		licenseFilename:  "LICENSE",
 		args: []string{
 			"[year]",
 			"[fullname]",
@@ -32,13 +32,13 @@ var templates = map[string]templateInfo{
 	},
 	"GNU GPLv3": {
 		templateFilename: "gnu_gplv3.txt",
-		outputFilename:   "COPYING",
+		licenseFilename:  "COPYING",
 	},
 }
 
 type templateInfo struct {
 	templateFilename string
-	outputFilename   string
+	licenseFilename  string
 	args             []string
 }
 
@@ -78,5 +78,5 @@ func generateLicense(name string) (string, string, error) {
 		licenseData = strings.ReplaceAll(licenseData, arg, value)
 	}
 
-	return licenseData, templateInfo.outputFilename, nil
+	return licenseData, templateInfo.licenseFilename, nil
 }
