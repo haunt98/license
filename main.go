@@ -78,13 +78,13 @@ func (a *action) RunGenerate(c *cli.Context) error {
 	fmt.Printf("What LICENSE do you chose: ")
 	licenseName := ioe.ReadInput()
 
-	license, err := generateLicense(licenseName)
+	licenseData, outputFilename, err := generateLicense(licenseName)
 	if err != nil {
 		return fmt.Errorf("failed to generate license %s: %w", licenseName, err)
 	}
 
-	outputFile := filepath.Join(a.flags.output, licenseFilename)
-	if err := os.WriteFile(outputFile, []byte(license), os.ModePerm); err != nil {
+	outputFile := filepath.Join(a.flags.output, outputFilename)
+	if err := os.WriteFile(outputFile, []byte(licenseData), os.ModePerm); err != nil {
 		return fmt.Errorf("failed to write file %s: %w", outputFile, err)
 	}
 

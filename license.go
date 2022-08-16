@@ -23,27 +23,29 @@ var embedFS embed.FS
 // always use upercase for license name
 var templates = map[string]templateInfo{
 	"MIT": {
-		filename: "mit.txt",
+		templateFilename: "mit.txt",
+		outputFilename:   "LICENSE",
 		args: []string{
 			"[year]",
 			"[fullname]",
 		},
 	},
 	"GNU GPLv3": {
-		filename: "gnu_gplv3.txt",
+		templateFilename: "gnu_gplv3.txt",
+		outputFilename:   "COPYING",
 	},
 }
 
 type templateInfo struct {
-	filename string
-	args     []string
+	templateFilename string
+	outputFilename   string
+	args             []string
 }
 
-func generateLicense(name string) (string, error) {
+func generateLicense(name string) (string, string, error) {
 	if name == "" {
-		return "", fmt.Errorf("empty license name: %w", ErrInvalidLicense)
+		return "", "", fmt.Errorf("empty license name: %w", ErrInvalidLicense)
 	}
-	name = strings.ToUpper(name)
 
 	isSupportTemplate := false
 	var templateInfo templateInfo
@@ -55,26 +57,26 @@ func generateLicense(name string) (string, error) {
 	}
 
 	if !isSupportTemplate {
-		return "", fmt.Errorf("not support license %s: %w", name, ErrInvalidLicense)
+		return "", "", fmt.Errorf("not support license %s: %w", name, ErrInvalidLicense)
 	}
 
 	// Get correct path of license
-	path := filepath.Join(templatesPath, templateInfo.filename)
+	path := filepath.Join(templatesPath, templateInfo.templateFilename)
 
 	// Read template
 	templateRaw, err := embedFS.ReadFile(path)
 	if err != nil {
-		return "", fmt.Errorf("failed to read file %s: %w", path, err)
+		return "", "", fmt.Errorf("failed to read file %s: %w", path, err)
 	}
 
-	// Replace template
-	template := string(templateRaw)
+	// Replace template info args
+	licenseData := string(templateRaw)
 	for _, arg := range templateInfo.args {
 		fmt.Printf("What is your %s: ", arg)
 		value := ioe.ReadInput()
 
-		template = strings.ReplaceAll(template, arg, value)
+		licenseData = strings.ReplaceAll(licenseData, arg, value)
 	}
 
-	return template, nil
+	return licenseData, templateInfo.outputFilename, nil
 }
