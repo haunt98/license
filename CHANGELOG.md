@@ -1,5 +1,51 @@
 # CHANGELOG
 
+## v0.6.0 (2022-08-16)
+
+### Added
+
+- feat: show currently support (2022-08-16)
+
+- feat: use template output filename (2022-08-16)
+
+- feat: support gnu gplv3 (2022-08-16)
+
+### Others
+
+- chore: fix lint (2022-08-16)
+
+- chore: update license (2022-08-16)
+
+- chore: clean up aliases (2022-08-16)
+
+- chore: update README (2022-08-16)
+
+- chore: add Makefile (2022-08-16)
+
+- refactor: outputFilename -> licenseFilename (2022-08-16)
+
+- chore: add template GNU GPLv3 (2022-08-16)
+
+- chore: update golangci config (2022-08-16)
+
+- chore: fix lint (2022-08-16)
+
+- chore: update github action with new goreleaser config (2022-08-16)
+
+- refactor: use prefixName and prefixUsage (2022-08-16)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.11.1 to 2.11.2 (2022-08-15)
+
+- Merge pull request #2 from haunt98/dependabot/go_modules/github.com/urfave/cli/v2-2.11.1 (2022-07-22)
+
+- Merge pull request #3 from haunt98/dependabot/go_modules/github.com/make-go-great/color-go-0.4.1 (2022-07-22)
+
+- chore: add dependabot (2022-07-22)
+
+- chore: update README badge (2021-12-02)
+
+- chore(changelog): generate v0.5.0 (2021-12-02)
+
 ## v0.5.0 (2021-12-02)
 
 ### Others
