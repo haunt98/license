@@ -75,7 +75,11 @@ func (a *action) RunHelp(c *cli.Context) error {
 func (a *action) RunGenerate(c *cli.Context) error {
 	a.getFlags(c)
 
-	fmt.Printf("What LICENSE do you chose: ")
+	fmt.Println("What LICENSE do you chose: ")
+	fmt.Println("Currently support: ")
+	for templateName := range templates {
+		fmt.Println("-", templateName)
+	}
 	licenseName := ioe.ReadInput()
 
 	licenseData, licenseFilename, err := generateLicense(licenseName)
