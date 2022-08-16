@@ -24,13 +24,7 @@ const (
 	licenseFilename = "LICENSE"
 )
 
-var (
-	// command aliases
-	generateAliases = []string{"gen"}
-
-	// flag aliases
-	outputAliases = []string{"o"}
-)
+var commandGenerateAliases = []string{"gen", "g"}
 
 func main() {
 	a := action{}
@@ -41,12 +35,11 @@ func main() {
 		Commands: []*cli.Command{
 			{
 				Name:    commandGenerateName,
-				Aliases: generateAliases,
+				Aliases: commandGenerateAliases,
 				Usage:   commandGenerateUsage,
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:        flagOutputName,
-						Aliases:     outputAliases,
 						Usage:       flagOutputUsage,
 						DefaultText: currentDir,
 					},
@@ -97,4 +90,7 @@ func (a *action) RunGenerate(c *cli.Context) error {
 
 func (a *action) getFlags(c *cli.Context) {
 	a.flags.output = c.String(flagOutputName)
+	if a.flags.output == "" {
+		a.flags.output = currentDir
+	}
 }
