@@ -20,8 +20,7 @@ const (
 	flagOutputName  = "output"
 	flagOutputUsage = "output directory"
 
-	currentDir      = "."
-	licenseFilename = "LICENSE"
+	currentDir = "."
 )
 
 var commandGenerateAliases = []string{"gen", "g"}
