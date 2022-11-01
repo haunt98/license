@@ -9,6 +9,7 @@ Support:
 
 - [MIT](https://choosealicense.com/licenses/mit/)
 - [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
+- [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Install
 

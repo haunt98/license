@@ -34,6 +34,14 @@ var templates = map[string]templateInfo{
 		templateFilename: "gnu_gplv3.txt",
 		licenseFilename:  "COPYING",
 	},
+	"Apache License 2.0": {
+		templateFilename: "apache_2.0.txt",
+		licenseFilename:  "LICENSE",
+		args: []string{
+			"[yyyy]",
+			"[name of copyright owner]",
+		},
+	},
 }
 
 type templateInfo struct {
