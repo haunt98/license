@@ -1,5 +1,37 @@
 # CHANGELOG
 
+## v0.7.0 (2022-11-01)
+
+### Added
+
+- feat: support apache license 2.0 (2022-11-01)
+
+### Others
+
+- chore: add comment (2022-11-01)
+
+- chore: update golangci-lint config (2022-11-01)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.20.3 to 2.23.0 (2022-10-31)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.20.2 to 2.20.3 (2022-10-24)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.19.2 to 2.20.2 (2022-10-17)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.17.1 to 2.19.2 (2022-10-10)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.16.3 to 2.17.1 (2022-09-29)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.15.0 to 2.16.3 (2022-09-12)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.14.1 to 2.15.0 (2022-09-09)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.14.0 to 2.14.1 (2022-09-05)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.11.2 to 2.14.0 (2022-09-01)
+
+- chore(changelog): generate v0.6.0 (2022-08-16)
+
 ## v0.6.0 (2022-08-16)
 
 ### Added
