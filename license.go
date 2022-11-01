@@ -19,7 +19,7 @@ var ErrInvalidLicense = errors.New("invalid license")
 //go:embed templates/*
 var embedFS embed.FS
 
-// map template name with filename
+// Map template name with filename and args
 // always use upercase for license name
 var templates = map[string]templateInfo{
 	"MIT": {
