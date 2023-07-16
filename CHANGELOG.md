@@ -1,5 +1,43 @@
 # CHANGELOG
 
+## v0.7.1 (2023-07-16)
+
+### Others
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.6 to 2.25.7 (2023-06-19)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.5 to 2.25.6 (2023-06-13)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.4 to 2.25.5 (2023-05-30)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.3 to 2.25.4 (2023-05-29)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.1 to 2.25.3 (2023-05-01)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.0 to 2.25.1 (2023-03-28)
+
+- build(deps): bump golang.org/x/sys (2023-03-07)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.24.4 to 2.25.0 (2023-03-06)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.24.3 to 2.24.4 (2023-02-16)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.24.2 to 2.24.3 (2023-02-03)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.24.1 to 2.24.2 (2023-01-30)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.23.7 to 2.24.1 (2023-01-23)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.23.6 to 2.23.7 (2022-12-12)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.23.5 to 2.23.6 (2022-12-06)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.23.4 to 2.23.5 (2022-11-09)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.23.0 to 2.23.4 (2022-11-08)
+
+- chore(changelog): generate v0.7.0 (2022-11-01)
+
 ## v0.7.0 (2022-11-01)
 
 ### Added
