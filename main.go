@@ -80,7 +80,7 @@ func (a *action) RunGenerate(c *cli.Context) error {
 	}
 
 	outputFile := filepath.Join(a.flags.output, licenseFilename)
-	if err := os.WriteFile(outputFile, []byte(licenseData), os.ModePerm); err != nil {
+	if err := os.WriteFile(outputFile, []byte(licenseData), 0o600); err != nil {
 		return fmt.Errorf("failed to write file %s: %w", outputFile, err)
 	}
 
