@@ -1,6 +1,6 @@
 module github.com/haunt98/license
 
-go 1.17
+go 1.22
 
 require (
 	github.com/make-go-great/color-go v0.5.0
