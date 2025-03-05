@@ -1,5 +1,53 @@
 # CHANGELOG
 
+## v0.7.2 (2025-03-05)
+
+### Others
+
+- chore: deprecated check-shadowing in golangci.yml (2025-01-05)
+
+- chore: sync lint (2024-10-26)
+
+- chore: fix ci (2024-10-14)
+
+- chore: bump workflows (2024-08-22)
+
+- chore: migrate to justfile (2024-08-22)
+
+- Merge branch 'main' of https://github.com/haunt98/license (2024-07-26)
+
+- chore: fix lint (2024-07-26)
+
+- chore: remove goreleaser (2024-06-10)
+
+- chore: add badges (2024-06-08)
+
+- chore: add gitleaks (2024-06-08)
+
+- chore: sync golangci-lint config (2024-05-08)
+
+- chore(changelog): generate v0.7.1 (2023-07-16)
+
+### Build
+
+- build: bump go.mod 1.24 (2025-03-05)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.27.5 to 2.27.6 (#38) (2025-03-05)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.27.4 to 2.27.5 (#37) (2024-10-14)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.27.3 to 2.27.4 (#36) (2024-08-12)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.27.1 to 2.27.2 (#34) (2024-04-29)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.27.0 to 2.27.1 (#33) (2024-01-02)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.26.0 to 2.27.0 (#32) (2023-12-28)
+
+- build(deps): bump github.com/urfave/cli/v2 from 2.25.7 to 2.26.0 (2023-12-04)
+
+- build(deps): bump github.com/make-go-great/color-go from 0.4.1 to 0.5.0 (2023-07-17)
+
 ## v0.7.1 (2023-07-16)
 
 ### Others
