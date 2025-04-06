@@ -15,16 +15,8 @@ Support:
 
 ## Install
 
-With Go version `>= 1.16`:
-
 ```sh
 go install github.com/haunt98/license@latest
-```
-
-With Go version `< 1.16`:
-
-```sh
-GO111module=on go get github.com/license/changeloguru
 ```
 
 ## Usage
