@@ -1,13 +1,14 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"path/filepath"
 
 	"github.com/make-go-great/color-go"
 	"github.com/make-go-great/ioe-go"
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 )
 
 const (
@@ -28,7 +29,7 @@ var commandGenerateAliases = []string{"gen", "g"}
 func main() {
 	a := action{}
 
-	app := &cli.App{
+	app := &cli.Command{
 		Name:  name,
 		Usage: usage,
 		Commands: []*cli.Command{
@@ -49,7 +50,7 @@ func main() {
 		Action: a.RunHelp,
 	}
 
-	if err := app.Run(os.Args); err != nil {
+	if err := app.Run(context.Background(), os.Args); err != nil {
 		color.PrintAppError(name, err.Error())
 	}
 }
@@ -60,11 +61,11 @@ type action struct {
 	}
 }
 
-func (a *action) RunHelp(c *cli.Context) error {
+func (a *action) RunHelp(ctx context.Context, c *cli.Command) error {
 	return cli.ShowAppHelp(c)
 }
 
-func (a *action) RunGenerate(c *cli.Context) error {
+func (a *action) RunGenerate(ctx context.Context, c *cli.Command) error {
 	a.getFlags(c)
 
 	fmt.Println("What LICENSE do you chose: ")
@@ -87,7 +88,7 @@ func (a *action) RunGenerate(c *cli.Context) error {
 	return nil
 }
 
-func (a *action) getFlags(c *cli.Context) {
+func (a *action) getFlags(c *cli.Command) {
 	a.flags.output = c.String(flagOutputName)
 	if a.flags.output == "" {
 		a.flags.output = currentDir
