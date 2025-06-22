@@ -1,4 +1,4 @@
-all: tidy test-color lint
+all: tidy format test-color lint
 
 tidy:
     go mod tidy
@@ -22,3 +22,9 @@ coverage-html: coverage
 lint:
     golangci-lint run --fix ./...
     modernize -fix -test ./...
+
+format:
+    # go install github.com/haunt98/gofimports/cmd/gofimports@latest
+    # go install mvdan.cc/gofumpt@latest
+    gofimports -w --company github.com/make-go-great,github.com/haunt98 .
+    gofumpt -w -extra .

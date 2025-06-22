@@ -6,9 +6,10 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/urfave/cli/v3"
+
 	"github.com/make-go-great/color-go"
 	"github.com/make-go-great/ioe-go"
-	"github.com/urfave/cli/v3"
 )
 
 const (
