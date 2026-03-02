@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/make-go-great/color-go v0.6.0
 	github.com/make-go-great/ioe-go v0.6.0
-	github.com/urfave/cli/v3 v3.6.2
+	github.com/urfave/cli/v3 v3.7.0
 )
 
 require (
