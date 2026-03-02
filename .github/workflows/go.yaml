@@ -42,7 +42,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: "stable"
-      - run: go build .
+      - run: go build -o ./out .
   golangci-lint:
     name: golangci-lint
     runs-on: ubuntu-slim
