@@ -1,5 +1,61 @@
 # CHANGELOG
 
+## v0.9.0 (2026-05-13)
+
+### Others
+
+- chore: update lint (2026-05-10)
+
+- chore (2026-03-21)
+
+- lint (2026-03-10)
+
+- chore: fix github ci (2026-03-02)
+
+- chore: ubuntu-latest -> ubuntu-slim (2025-12-20)
+
+- chore: add format (2025-06-22)
+
+- docs: rm go 1.16 (2025-04-06)
+
+- chore(changelog): generate v0.8.0 (2025-04-06)
+
+### Build
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.8.0 to 3.9.0 (#54) (2026-05-13)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.7.0 to 3.8.0 (#53) (2026-03-26)
+
+- build(deps): bump github.com/make-go-great/color-go from 0.6.0 to 0.7.0 (#52) (2026-03-23)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.6.2 to 3.7.0 (#51) (2026-03-02)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.6.1 to 3.6.2 (#50) (2026-01-20)
+
+- build(deps): bump github.com/make-go-great/ioe-go from 0.3.0 to 0.6.0 (#49) (2025-12-22)
+
+- build(deps): bump github.com/make-go-great/color-go from 0.5.0 to 0.6.0 (#48) (2025-12-18)
+
+- build: bump go.mod (2025-12-18)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.6.0 to 3.6.1 (#47) (2025-11-17)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.5.0 to 3.6.0 (#46) (2025-11-10)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.4.1 to 3.5.0 (#45) (2025-10-21)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.3.8 to 3.4.1 (#44) (2025-08-13)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.3.3 to 3.3.8 (#43) (2025-06-13)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.3.2 to 3.3.3 (#42) (2025-05-12)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.3.1 to 3.3.2 (#41) (2025-04-29)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.2.0 to 3.3.1 (#40) (2025-04-28)
+
+- build(deps): bump github.com/urfave/cli/v3 from 3.1.1 to 3.2.0 (#39) (2025-04-21)
+
 ## v0.8.0 (2025-04-06)
 
 ### Others
