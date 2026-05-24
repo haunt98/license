@@ -20,7 +20,7 @@ var ErrInvalidLicense = errors.New("invalid license")
 var embedFS embed.FS
 
 // Map template name with filename and args
-// always use upercase for license name
+// Always use uppercase for license name
 var templates = map[string]templateInfo{
 	"MIT": {
 		templateFilename: "mit.txt",
